@@ -51,7 +51,7 @@
                         <ul>
                             <li><span>Programming Languages</span><br>C, C++, Java</li>
                             <li><span>Web Development</span><br>HTML, Tailwind CSS, Javascript, MERN Stack</li>
-                            <li><span>Manipulation of Database</span><br>MySQL</li>
+                            <li><span>Manipulation of Database</span><br>MySQL, MongoDB</li>
                         </ul>
                     </div>
                     <!-- <div class="tab-contents" id="experience">
@@ -148,10 +148,13 @@
                     <a href="images/my-cv2.pdf" download class="btn btn2">Download CV</a>
                 </div>
                 <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="Name" placeholder="Your Name" required>
-                        <input type="email" name="Email" placeholder="Your Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <form action="https://api.web3forms.com/submit" method="POST">
+
+                        <input type="hidden" name="access_key" value="e80d11a2-4466-4df9-8e90-c719c0986aa2">
+                        <input type="text" name="name"  placeholder="Your Name" required>
+                        <input type="email" name="email"  placeholder="Your Email" required>
+                        <input type="phone" name="phone"  placeholder="Phone No." required>
+                        <textarea name="message" rows="6" placeholder="Your Message"></textarea>
                         <button type="submit" class="btn btn2">Submit</button>
                     </form>
                     <span id="msg"></span>
@@ -194,8 +197,31 @@
 
     </script>
 
-
+    <!-- <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script>
+        function sendEmail() {
+            // var name = document.getElementById("name").value;
+            // var email = document.getElementById("email").value;
+            // var phone = document.getElementById("phone").value;
+            // var message = document.getElementById("Message").value;
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "akashnagar9595@gmail.com",
+                Password: "AkashNagar@95y",
+                To: 'malviyabakshi@gmail.com',
+                From: document.getElementById("email").value,
+                Subject: "New Contact form enquiry",
+                Body: "And this is the body"
+                // Subject: "Message from " + name,
+                // Body: "Name: " + name + "\n" + "Email: " + email + "\n" + "Phone: " + phone + "\n" + "Message: " + message
+            }).then( 
+                message => alert(message)
+            );
+        }
+    </script> -->
+
+
+    <!-- <script>
         const scriptURL = 'https://script.google.com/macros/s/AKfycbyp6WIo_WNzm4mHUe1jl7y0xiQDnfU6bQt0FLko23nt07lKkRn_0a4FQ__6d1xWX89q_w/exec'
         const form = document.forms['submit-to-google-sheet']
         const msg = document.getElementById("msg");
@@ -212,7 +238,7 @@
             })
             .catch(error => console.error('Error!', error.message))
         })
-    </script>
+    </script> -->
 </body>
 
 </html>
